@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kursu_menu>
+    <kurss>
+        <name>DP1-4</name>
+        <apraksts> Pirmais kurss, 4 klase </apraksts>
+        <pasniedzejs> Igors Litvjakovs </pasniedzejs>
+        <ilgums> 1200 </ilgums>
+        <studentu_skaits> 29 </studentu_skaits>
+        <limenis> Iesaceji </limenis>
+    </kurss>
+    <kurss>
+        <name> DP 2-4 </name>
+        <apraksts> Otrais kurss, 4 klase </apraksts>
+        <pasniedzejs> Vadims Malickis </pasniedzejs>
+        <ilgums> 1250 <ilgums>
+        <studentu_skaits> 30 </studentu_skaits>
+        <limenis> Vidējs </limenis>
+    </kurss>
+    <kurss>
+        <name> DP 3-4 </name>
+        <apraksts> Tresais kurss, 4 klase </apraksts>
+        <pasniedzejs> Vadims Malickis </pasniedzejs>
+        <ilgums> 1150 <ilgums>
+        <studentu_skaits> 24 </studentu_skaits>
+        <limenis> Augsts </limenis>
+    </kurss>
+</kursu_menu>
