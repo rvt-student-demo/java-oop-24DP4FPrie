@@ -17,9 +17,6 @@ public class Todo {
         loadFromFile();
     }
 
-    // ===============================
-    // LOAD CSV -> ARRAYLIST
-    // ===============================
     private void loadFromFile() {
     try {
         BufferedReader br = new BufferedReader(new FileReader(filePath));
@@ -47,17 +44,10 @@ public class Todo {
     }
 }
 
-
-    // ===============================
-    // GET LAST ID FROM ARRAYLIST
-    // ===============================
     private int getLastId() {
         return tasks.size();
     }
 
-    // ===============================
-    // SAVE ARRAYLIST -> CSV
-    // ===============================
     private boolean updateFile() {
         try {
             FileWriter fw = new FileWriter(filePath);
@@ -74,26 +64,16 @@ public class Todo {
         }
     }
 
-    // ===============================
-    // ADD TASK
-    // ===============================
     public void add(String task) {
         tasks.add(task);
         updateFile();
     }
-
-    // ===============================
-    // PRINT TASKS
-    // ===============================
     public void print() {
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println((i + 1) + ": " + tasks.get(i));
         }
     }
 
-    // ===============================
-    // REMOVE TASK
-    // ===============================
     public void remove(int id) {
         if (id > 0 && id <= tasks.size()) {
             tasks.remove(id - 1);
@@ -101,41 +81,12 @@ public class Todo {
         }
     }
 
-    // ===============================
-    // USER INTERFACE (UNCHANGED)
-    // ===============================
-    public static class UserInterface {
-        private Todo todo;
-        private Scanner scanner;
 
-        public UserInterface(Todo todo, Scanner scanner) {
-            this.todo = todo;
-            this.scanner = scanner;
-        }
+    public java.util.List<String> getTasks() {
+        return new java.util.ArrayList<>(tasks);
+    }
 
-        public void start() {
-            while (true) {
-                System.out.print("Command: ");
-                String command = scanner.nextLine();
-
-                if (command.equals("stop")) {
-                    break;
-                }
-
-                if (command.equals("add")) {
-                    System.out.print("To add: ");
-                    String task = scanner.nextLine();
-                    todo.add(task);
-
-                } else if (command.equals("list")) {
-                    todo.print();
-
-                } else if (command.equals("remove")) {
-                    System.out.print("Which one is removed? ");
-                    int number = Integer.valueOf(scanner.nextLine());
-                    todo.remove(number);
-                }
-            }
-        }
+    public java.util.List<String> findAll() {
+        return getTasks();
     }
 }
